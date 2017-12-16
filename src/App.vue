@@ -7,7 +7,14 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  created(){
+    this.$show()
+    setTimeout(()=>{
+      alert(3333)
+      this.$hide()
+    },2000)
+  }
 }
 </script>
 
