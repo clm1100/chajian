@@ -8,7 +8,7 @@ let Loading = {
 
 Loading.install = function(vue,options){
     let loading = new Vueloading()
-    console.log(loading)
+    console.log("loading",loading)
     loading.$mount()
     vue.$show = vue.prototype.$show = function(){
         document.querySelector('body').appendChild(loading.$el)
