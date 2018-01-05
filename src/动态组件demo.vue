@@ -7,8 +7,6 @@
       <component v-bind:is="which_to_show"></component>  
       <!-- </keep-alive> -->
     </div>
-    <router-view>
-    </router-view>
 
   </div>
 </template>
