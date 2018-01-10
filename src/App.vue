@@ -5,36 +5,31 @@
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					 <span class="navbar-brand" >欢迎:admin</span>
+					 <span class="navbar-brand" >欢迎:陈黎明</span>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li :class="{active:showindex==1}" @click='active(1)'>
-							 <a >关于vue的导航</a>
+							 <a href="#">关于vue的导航</a>
 						</li>
 						<li :class="{active:showindex==2}" @click='active(2)'>
-							 <a>关于nodejs的导航</a>
+							 <a href="#">关于nodejs的导航</a>
 						</li>
             <li :class="{active:showindex==3}" @click='active(3)'>
-							 <a>react的导航</a>
+							 <a href="#">react的导航</a>
 						</li>
             <li :class="{active:showindex==4}" @click='active(4)'>
-              <a >其他导航</a>
+              <a href="#">其他导航</a>
             </li>
 					</ul>
 				</div>		
 			</nav>
 		</div>
 	</div>
-  <div class="row">
-    <component v-bind:is="which_to_show">
-    </component>
-    <div class="col-md-10 column">
-      <h1>我是路由组件暂时不切换</h1>
-    </div>
   </div>
-  </div>
-
+  <component v-bind:is="which_to_show">
+  </component>
+  
   </div>
 </template>
 <script>
