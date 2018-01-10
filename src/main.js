@@ -1,25 +1,26 @@
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import VueI18n from 'vue-i18n'
+const messages = {
+ en: {
+  message: {
+   hello: 'world hello'
+  }
+ },
+ zh: {
+  message: {
+   hello: '世界'
+  }
+ }
+}
 
-// import loading from './plug/loading'
-// Vue.use(loading);
-import VueResource from 'vue-resource'
-// Vue.use(VueResource)
-Vue.config.productionTip = false
-
+Vue.use(VueI18n)
+const i18n = new VueI18n({
+ locale: 'zh',
+ messages
+})
 new Vue({
-  el: '#app',
-  router,
+  i18n,
   template: '<App/>',
   components: { App },
-  created(){
-    console.log(this.$router);
-    console.log(this.$route)
-    for(var key in this.$router){
-      if(typeof this.$router[key] == 'function'){
-        console.log(key);
-      }
-    }
-  }
-})
+}).$mount('#app')
