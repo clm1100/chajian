@@ -6,9 +6,10 @@
     </div>
 </template>
 <script>
-import { mapActions,mapGetters } from "vuex";
+import { mapActions,mapGetters, mapMutations} from "vuex";
 export default {
   created() {
+      this.testMutation()
     console.log("=====$store=====");
     console.log(this.$store);
     console.log("=====$store.state=====");
@@ -20,6 +21,9 @@ export default {
   methods: {
       ...mapActions([
           'testarg'
+      ]),
+      ...mapMutations([
+          'testMutation'
       ])
   },
   computed: {

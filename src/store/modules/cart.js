@@ -77,6 +77,11 @@ const actions = {
 
 // mutations
 const mutations = {
+  testMutation(a,b,d){
+    console.log(a);
+    console.log(b);
+    console.log(d);
+  },
   pushProductToCart (state, { id }) {
     state.added.push({
       id,
