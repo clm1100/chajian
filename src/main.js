@@ -18,12 +18,40 @@ var router = new VueRouter({
       component: App
     },
     {
-      path: '/abc',
+      path: '/abc/:id',
       name: 'abc',
-      component: Abc
+      component: Abc,
+      meta:{requireAuth:true}
+    },
+    {
+      path: '/abc/ccc',
+      name: 'abc',
+      component: Abc,
+      meta:{requireAuth:true}
+    },
+    {
+      path: '/foo',
+      component: Abc,
+      children: [
+        { 
+          path: 'bar', 
+          component: Abc 
+        }
+      ]
     }
 
   ]
+})
+
+router.beforeEach((to,from,next)=>{
+  console.log(to.matched)
+  console.log(to.meta)
+  to.matched.some(e=>{console.log(e)})
+  console.log("==============")
+  console.log(to);
+  console.log(from);
+  console.log("==============")
+  next()
 })
 
 new Vue({
